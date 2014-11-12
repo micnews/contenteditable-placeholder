@@ -33,6 +33,17 @@ test('element with text', function (t) {
   t.end()
 })
 
+test('element with whitespace text', function (t) {
+  var element = x('<p contenteditable data-placeholder="boop">   </p>')
+  document.body.appendChild(element)
+
+  placeholder(element)
+
+  t.notOk(element.classList.contains('placeholder'))
+
+  t.end()
+})
+
 test('element with child', function (t) {
   var element = x('<p contenteditable data-placeholder="bong"></p>')
   element.appendChild(x('<img src="http://placekitten.com/g/90/90"/>'))

@@ -2,7 +2,7 @@ var dom = require('dom-events')
   , MutationObserver = require('mutation-observer')
 
   , isEmpty = function (element) {
-      return element.textContent.trim() === '' && element.children.length === 0
+      return element.textContent === '' && element.children.length === 0
     }
 
   , placeholder = function (element) {
