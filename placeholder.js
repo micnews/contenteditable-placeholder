@@ -4,6 +4,7 @@ var dom = require('dom-events')
   , isEmpty = function (element) {
       return element.textContent.trim() === '' && element.children.length === 0
     }
+
   , placeholder = function (element) {
       var update = function () {
         if (isEmpty(element) && document.activeElement !== element) {
@@ -20,6 +21,9 @@ var dom = require('dom-events')
       dom.on(element, 'blur', update)
     }
 
-require('insert-css')(require('fs').readFileSync(__dirname + '/placeholder.css', 'utf8'))
+// insert the little css needed, since you can't inline set ':before'
+require('insert-css')(
+  require('fs').readFileSync(__dirname + '/placeholder.css', 'utf8')
+)
 
 module.exports = placeholder

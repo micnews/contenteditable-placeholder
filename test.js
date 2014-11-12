@@ -93,5 +93,4 @@ test('element changing in focus', function (t) {
     t.notOk(element.classList.contains('placeholder'))
     t.end()
   })
-
 })
