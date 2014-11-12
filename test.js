@@ -4,43 +4,43 @@ var x = require('element')
   , placeholder = require('./placeholder')
 
 test('empty element, focus & blur', function (t) {
-  var empty = x('<p contenteditable data-placeholder="beep"></p>')
-  document.body.appendChild(empty)
+  var element = x('<p contenteditable data-placeholder="beep"></p>')
+  document.body.appendChild(element)
 
-  placeholder(empty)
+  placeholder(element)
 
-  t.ok(empty.classList.contains('placeholder'))
+  t.ok(element.classList.contains('placeholder'))
 
-  empty.focus()
+  element.focus()
 
-  t.notOk(empty.classList.contains('placeholder'))
+  t.notOk(element.classList.contains('placeholder'))
 
-  empty.blur()
+  element.blur()
 
-  t.ok(empty.classList.contains('placeholder'))
+  t.ok(element.classList.contains('placeholder'))
 
   t.end()
 })
 
 test('element with text', function (t) {
-  var text = x('<p contenteditable data-placeholder="boop">foo</p>')
-  document.body.appendChild(text)
+  var element = x('<p contenteditable data-placeholder="boop">foo</p>')
+  document.body.appendChild(element)
 
-  placeholder(text)
+  placeholder(element)
 
-  t.notOk(text.classList.contains('placeholder'))
+  t.notOk(element.classList.contains('placeholder'))
 
   t.end()
 })
 
 test('element with child', function (t) {
-  var withChild = x('<p contenteditable data-placeholder="bong"></p>')
-  withChild.appendChild(x('<img src="http://placekitten.com/g/90/90"/>'))
-  document.body.appendChild(withChild)
+  var element = x('<p contenteditable data-placeholder="bong"></p>')
+  element.appendChild(x('<img src="http://placekitten.com/g/90/90"/>'))
+  document.body.appendChild(element)
 
-  placeholder(withChild)
+  placeholder(element)
 
-  t.notOk(withChild.classList.contains('placeholder'))
+  t.notOk(element.classList.contains('placeholder'))
 
   t.end()
 })
