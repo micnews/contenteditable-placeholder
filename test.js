@@ -77,3 +77,21 @@ test('element setting innerHTML', function (t) {
     t.end()
   })
 })
+
+test('element changing in focus', function (t) {
+  var element = x('<p contenteditable data-placeholder="foo">content</p>')
+
+  document.body.appendChild(element)
+
+  placeholder(element)
+
+  element.focus()
+
+  element.innerHTML = ''
+
+  process.nextTick(function () {
+    t.notOk(element.classList.contains('placeholder'))
+    t.end()
+  })
+
+})

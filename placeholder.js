@@ -5,7 +5,7 @@ var dom = require('dom-events')
       return element.textContent.trim() === '' && element.children.length === 0
     }
   , update = function (element) {
-      if (isEmpty(element)) {
+      if (isEmpty(element) && document.activeElement !== element) {
         element.classList.add('placeholder')
       } else {
         element.classList.remove('placeholder')
@@ -18,7 +18,7 @@ var dom = require('dom-events')
 
       update(element)
       dom.on(element, 'focus', function () {
-        element.classList.remove('placeholder')
+        update(element)
       })
 
       dom.on(element, 'blur', function () {
