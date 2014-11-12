@@ -1,4 +1,5 @@
 .placeholder:before {
   content: attr(data-placeholder);
   position: absolute;
+  cursor: text;
 }
