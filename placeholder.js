@@ -1,4 +1,6 @@
 var dom = require('dom-events')
+  , MutationObserver = require('mutation-observer')
+
   , isEmpty = function (element) {
       return element.textContent.trim() === '' && element.children.length === 0
     }
@@ -10,6 +12,10 @@ var dom = require('dom-events')
       }
     }
   , placeholder = function (element) {
+      new MutationObserver(function () {
+        update(element)
+      }).observe(element, { childList: true })
+
       update(element)
       dom.on(element, 'focus', function () {
         element.classList.remove('placeholder')

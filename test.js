@@ -44,3 +44,36 @@ test('element with child', function (t) {
 
   t.end()
 })
+
+test('element appending child', function (t) {
+  var element = x('<p contenteditable data-placeholder="blip"></p>')
+    , child = x('<img src="http://placekitten/g/90/90"/>')
+
+  document.body.appendChild(element)
+
+  placeholder(element)
+
+  element.appendChild(child)
+
+  // run in next tick so that the observer can run
+  process.nextTick(function () {
+    t.notOk(element.classList.contains('placeholder'))
+    t.end()
+  })
+})
+
+test('element setting innerHTML', function (t) {
+  var element = x('<p contenteditable data-placeholder="blip"></p>')
+
+  document.body.appendChild(element)
+
+  placeholder(element)
+
+  element.innerHTML = 'oh yeah'
+
+  // run in next tick so that the observer can run
+  process.nextTick(function () {
+    t.notOk(element.classList.contains('placeholder'))
+    t.end()
+  })
+})

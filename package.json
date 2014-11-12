@@ -19,7 +19,8 @@
   "dependencies": {
     "brfs": "^1.2.0",
     "dom-events": "^0.1.1",
-    "insert-css": "^0.2.0"
+    "insert-css": "^0.2.0",
+    "mutation-observer": "0.0.1"
   },
   "devDependencies": {
     "browserify": "^6.3.2",
