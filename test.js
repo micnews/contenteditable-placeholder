@@ -3,11 +3,19 @@ var x = require('element')
 
   , placeholder = require('./placeholder')
 
-test('empty element', function (t) {
+test('empty element, focus & blur', function (t) {
   var empty = x('<p contenteditable data-placeholder="beep"></p>')
   document.body.appendChild(empty)
 
   placeholder(empty)
+
+  t.ok(empty.classList.contains('placeholder'))
+
+  empty.focus()
+
+  t.notOk(empty.classList.contains('placeholder'))
+
+  empty.blur()
 
   t.ok(empty.classList.contains('placeholder'))
 

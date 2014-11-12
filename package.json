@@ -18,6 +18,7 @@
   "homepage": "https://github.com/micnews/contenteditable-placeholder",
   "dependencies": {
     "brfs": "^1.2.0",
+    "dom-events": "^0.1.1",
     "insert-css": "^0.2.0"
   },
   "devDependencies": {
