@@ -4,7 +4,8 @@
   "description": "Add a placeholder to contenteditable-elements (using CSS)",
   "main": "placeholder.js",
   "scripts": {
-    "test": "browserify test.js | testron"
+    "lint": "semistandard",
+    "test": "browserify test.js | testron && npm run lint"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "browserify": "^11.2.0",
     "electron-prebuilt": "^0.34.1",
     "element": "^0.1.4",
+    "semistandard": "^7.0.2",
     "tape": "^4.2.2",
     "testron": "^1.2.0"
   },
