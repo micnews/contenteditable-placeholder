@@ -4,7 +4,7 @@
   "description": "Add a placeholder to contenteditable-elements (using CSS)",
   "main": "placeholder.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "browserify test.js | testron"
   },
   "repository": {
     "type": "git",
@@ -20,12 +20,14 @@
     "brfs": "^1.2.0",
     "dom-events": "^0.1.1",
     "insert-css": "^0.2.0",
-    "mutation-observer": "0.0.1"
+    "mutation-observer": "^1.0.2"
   },
   "devDependencies": {
-    "browserify": "^6.3.2",
+    "browserify": "^11.2.0",
+    "electron-prebuilt": "^0.34.1",
     "element": "^0.1.4",
-    "prova": "^1.15.0"
+    "tape": "^4.2.2",
+    "testron": "^1.2.0"
   },
   "browserify": {
     "transform": [

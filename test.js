@@ -1,5 +1,5 @@
 var x = require('element')
-  , test = require('prova')
+  , test = require('tape')
 
   , placeholder = require('./placeholder')
 
